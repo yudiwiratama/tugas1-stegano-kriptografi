@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Presensi Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Memuat pustaka CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1-crypto-js.js"></script>
+
+    <!-- Memuat pustaka jsrsasign untuk RSA -->
+    <script src="https://cdn.jsdelivr.net/npm/jsrsasign@10.1.15/jsrsasign-all-min.js"></script>
+    <script src="https://cdn.rawgit.com/travist/jsencrypt/master/bin/jsencrypt.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Aplikasi Presensi Sederhana</h1>
+
+        <div class="input-section">
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="name" placeholder="Masukkan nama Anda">
+
+            <label for="attendance-time">Waktu Presensi:</label>
+            <input type="text" id="attendance-time" placeholder="Waktu presensi otomatis" readonly>
+        </div>
+
+        <div class="action-buttons">
+            <button id="submit-presence">Submit Presensi</button>
+        </div>
+
+        <div class="result-section">
+            <h3>Hasil Enkripsi:</h3>
+            <div>
+                <label for="sha-result">SHA-256 Hash:</label>
+                <textarea id="sha-result" readonly placeholder="Hasil SHA-256"></textarea>
+            </div>
+
+            <div>
+                <label for="aes-result">AES Encrypted:</label>
+                <textarea id="aes-result" readonly placeholder="Hasil AES"></textarea>
+            </div>
+
+            <div>
+                <label for="rsa-result">RSA Encrypted:</label>
+                <textarea id="rsa-result" readonly placeholder="Hasil RSA"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memuat skrip JavaScript -->
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.8.1/jsrsasign-all-min.js"></script>
+</body>
+</html>
